@@ -110,4 +110,13 @@ export const projects: Project[] = [
     github: "https://github.com/vpandhare-25/Amazon_ReviewGuard",
     demo: null,
   },
+  {
+    name: "Kanban Task Board",
+    subtitle: "Full-stack task board with private guest accounts",
+    description:
+      "A Kanban board where every visitor automatically gets a private guest account, Postgres Row Level Security keeps each guest's tasks separate, and drag-and-drop works with mouse, touch and keyboard.",
+    tech: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "dnd-kit"],
+    github: "https://github.com/vpandhare-25/kanban-task-board",
+    demo: "https://kanban-task-board-mu-ten.vercel.app",
+  },
 ];
