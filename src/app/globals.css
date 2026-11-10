@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Dark mode is switched by adding the "dark" class to <html> (see ThemeToggle). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Color tokens: Michigan State green. Light mode first, dark mode below. */
+:root {
+  --bg: #e3eee7;
+  --text: #101814;
+  --muted: #3f4d46;
+  --accent: #18453b;
+  --line: #7f9188;
+  --tile: #ffffff;
+  --hover-border: rgb(24 69 59 / 0.35);
+  --hover-shadow: 0 6px 18px rgb(24 69 59 / 0.14);
+}
+
+.dark {
+  --bg: #0d1915;
+  --text: #e6efea;
+  --muted: #b3c3bb;
+  --accent: #8fd0b2;
+  --line: #4b5f56;
+  --tile: #17271f;
+  --hover-border: rgb(143 208 178 / 0.35);
+  --hover-shadow: 0 6px 18px rgb(0 0 0 / 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-tile: var(--tile);
+  --font-serif: "Times New Roman", Times, var(--nf-serif), serif;
+  --font-script: var(--nf-script), cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* The hover outline every experience, organization and project item gets. */
+.item {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.item:hover {
+  border-color: var(--hover-border);
+  box-shadow: var(--hover-shadow);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
