@@ -13,7 +13,7 @@ export const profile = {
   intro:
     "I'm a Computer Science student at Michigan State University interested in building reliable software, solving complex engineering problems, and understanding how systems work under the hood. I enjoy working across backend development, systems programming, and applied AI, and I'm always looking for opportunities to learn and build things that have a real impact.",
   // Your photo: public/images/portrait.jpg -> "/images/portrait.jpg"
-  portrait: null as string | null,
+  portrait: "/images/portrait.jpg" as string | null,
   copyrightYear: 2026,
 };
 
