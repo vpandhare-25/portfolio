@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Allura, Tinos } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
-// Tinos matches Times New Roman, so the serif looks the same on phones without Times.
-const serif = Tinos({ variable: "--nf-serif", subsets: ["latin"], weight: ["400", "700"] });
-// Handwritten font for the "vp" monogram in the corner.
-const script = Allura({ variable: "--nf-script", subsets: ["latin"], weight: "400" });
+// Archivo is a grotesk with a width axis: wide and heavy for the name and headings,
+// normal width for reading. IBM Plex Mono is for small labels and technical details.
+const sans = Archivo({ variable: "--nf-sans", subsets: ["latin"], axes: ["wdth"] });
+const mono = IBM_Plex_Mono({ variable: "--nf-mono", subsets: ["latin"], weight: ["400", "500"] });
 
-const title = "Vivek Pandhare";
+const title = "Vivek Pandhare · Software Engineer";
 const description =
   "Computer Science at Michigan State University. Backend development, systems programming and applied AI.";
 
@@ -26,10 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#e3eee7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0d1915" },
-  ],
+  themeColor: "#111312",
 };
 
 // Runs before the page paints, so a visitor who chose dark mode never sees a light flash.
@@ -37,11 +35,13 @@ const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${serif.variable} ${script.variable} antialiased`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className={`${sans.variable} ${mono.variable} antialiased`} suppressHydrationWarning>
+      <body>
+        <Script id="theme" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

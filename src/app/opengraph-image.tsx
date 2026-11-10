@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // The preview card shown when the link is shared on LinkedIn, Slack or in email.
-export const alt = "Vivek Pandhare";
+export const alt = "Vivek Pandhare · Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,16 +14,24 @@ export default function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#e3eee7",
-          color: "#101814",
-          fontFamily: "serif",
+          justifyContent: "space-between",
+          background: "#111312",
+          color: "#f4f3ef",
+          padding: "64px 72px",
+          fontFamily: "sans-serif",
         }}
       >
-        <div style={{ fontSize: 110, fontWeight: 700 }}>Vivek Pandhare</div>
-        <div style={{ width: 820, height: 2, background: "#7f9188", margin: "28px 0" }} />
-        <div style={{ fontSize: 36, color: "#18453b" }}>Computer Science · Michigan State University</div>
+        <div style={{ display: "flex", alignItems: "center", fontSize: 22, color: "#9a9f9b", letterSpacing: 3 }}>
+          <span style={{ width: 16, height: 16, background: "#1d6b48", marginRight: 18 }} />
+          COMPUTER SCIENCE · MICHIGAN STATE UNIVERSITY
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 150, fontWeight: 900, lineHeight: 0.88, letterSpacing: -4 }}>
+          <span>VIVEK</span>
+          <span>PANDHARE</span>
+        </div>
+        <div style={{ display: "flex", borderTop: "1px solid #2c302d", paddingTop: 22, fontSize: 24, color: "#9a9f9b" }}>
+          Backend development · Systems programming · Applied AI
+        </div>
       </div>
     ),
     size,

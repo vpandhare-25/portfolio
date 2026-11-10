@@ -3,63 +3,91 @@
 /* Dark mode is switched by adding the "dark" class to <html> (see ThemeToggle). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Color tokens: Michigan State green. Light mode first, dark mode below. */
+/*
+  Color tokens. Paper and ink, a dark band for the hero, and one signal color
+  (a deep Spartan green) used only for small markers and active states.
+*/
 :root {
-  --bg: #e3eee7;
-  --text: #101814;
-  --muted: #3f4d46;
-  --accent: #18453b;
-  --line: #7f9188;
-  --tile: #ffffff;
-  --hover-border: rgb(24 69 59 / 0.35);
-  --hover-shadow: 0 6px 18px rgb(24 69 59 / 0.14);
+  --paper: #f4f3ef;
+  --paper-2: #eae8e2;
+  --ink: #111312;
+  --ink-2: #3b3f3c;
+  --muted: #6c706c;
+  --rule: #d5d3cc;
+  --signal: #1d6b48;
+  --band: #111312;
+  --band-ink: #f4f3ef;
+  --band-muted: #9a9f9b;
+  --band-rule: #2c302d;
 }
 
 .dark {
-  --bg: #0d1915;
-  --text: #e6efea;
-  --muted: #b3c3bb;
-  --accent: #8fd0b2;
-  --line: #4b5f56;
-  --tile: #17271f;
-  --hover-border: rgb(143 208 178 / 0.35);
-  --hover-shadow: 0 6px 18px rgb(0 0 0 / 0.35);
+  --paper: #121413;
+  --paper-2: #1a1d1b;
+  --ink: #ecebe6;
+  --ink-2: #c6c7c1;
+  --muted: #8e938e;
+  --rule: #2b2f2c;
+  --signal: #5fbf8f;
+  --band: #0a0b0a;
+  --band-ink: #ecebe6;
+  --band-muted: #8e938e;
+  --band-rule: #262a27;
 }
 
 @theme inline {
-  --color-bg: var(--bg);
-  --color-text: var(--text);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-line: var(--line);
-  --color-tile: var(--tile);
-  --font-serif: "Times New Roman", Times, var(--nf-serif), serif;
-  --font-script: var(--nf-script), cursive;
+  --color-rule: var(--rule);
+  --color-signal: var(--signal);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+  --color-band-muted: var(--band-muted);
+  --color-band-rule: var(--band-rule);
+  --font-sans: var(--nf-sans), system-ui, sans-serif;
+  --font-mono: var(--nf-mono), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 3.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-serif);
-  transition: background-color 0.3s, color 0.3s;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
 }
 
-/* The hover outline every experience, organization and project item gets. */
-.item {
-  border: 1px solid transparent;
-  border-radius: 10px;
-  transition: box-shadow 0.3s, border-color 0.3s;
-}
-.item:hover {
-  border-color: var(--hover-border);
-  box-shadow: var(--hover-shadow);
+::selection {
+  background: var(--signal);
+  color: var(--paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--signal);
   outline-offset: 3px;
+}
+
+/* Wide letterforms for display type (Archivo's width axis). */
+.wide {
+  font-stretch: 112%;
+}
+
+/* Fine grid of crosshatch lines for photo placeholders. */
+.placeholder {
+  background-color: var(--paper-2);
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: 24px 24px;
 }

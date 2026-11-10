@@ -1,17 +1,14 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
-
-// Round button in the top-right corner that switches between light and dark mode
-// and remembers the choice for next time. CSS decides which icon shows
-// (moon in light mode, sun in dark mode), so the button needs no React state.
+// A small text switch in the nav ("Dark" / "Light") that changes the theme
+// and remembers the choice. CSS decides which word shows, so no React state is needed.
 export default function ThemeToggle() {
   function toggle() {
     const dark = document.documentElement.classList.toggle("dark");
     try {
       localStorage.setItem("theme", dark ? "dark" : "light");
     } catch {
-      // Storage can be blocked (private mode); the toggle still works for this visit.
+      // Storage can be blocked (private mode); the switch still works for this visit.
     }
   }
 
@@ -20,10 +17,13 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Toggle dark mode"
-      className="grid size-14 place-items-center rounded-full bg-tile text-accent shadow-[0_3px_6px_rgb(0_0_0/0.18)] transition-transform hover:scale-105"
+      className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-band-muted transition-colors hover:text-band-ink"
     >
-      <Moon className="size-5 dark:hidden" aria-hidden />
-      <Sun className="hidden size-5 dark:block" aria-hidden />
+      <span aria-hidden className="relative h-3 w-6 border border-current">
+        <span className="absolute inset-y-[2px] left-[2px] w-2 bg-current transition-transform duration-300 dark:translate-x-[10px]" />
+      </span>
+      <span className="dark:hidden">Light</span>
+      <span className="hidden dark:inline">Dark</span>
     </button>
   );
 }
