@@ -9,7 +9,7 @@ export default function Experience() {
       <SectionHead id="experience" title="Experience" />
       <ul className="mt-10 md:mt-14">
         {experience.map((job) => (
-          <LogoEntry key={job.company} logo={job.logo} name={job.company} role={job.role} description={job.description} />
+          <LogoEntry key={job.company} logo={job.logo} name={job.company} role={job.role} />
         ))}
       </ul>
     </section>

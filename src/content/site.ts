@@ -28,7 +28,6 @@ export const links = {
 export type Experience = {
   company: string;
   role: string;
-  description: string;
   logo: string;
 };
 
@@ -36,15 +35,11 @@ export const experience: Experience[] = [
   {
     company: "Enginuity Workspace",
     role: "Software Engineering Intern",
-    description:
-      "Worked on the backend of an AI tutoring platform, implementing REST APIs with Node.js and PostgreSQL, improving document ingestion pipelines, and resolving application bugs affecting user signups and performance.",
     logo: "/images/logos/enginuity.png",
   },
   {
     company: "Pfizer",
     role: "Artificial Intelligence Engineering Extern",
-    description:
-      "Worked on document intelligence workflows, developing Python-based OCR and document extraction pipelines for pharmaceutical PDFs. Benchmarked OCR engines and explored semantic search using LlamaIndex and vector databases.",
     logo: "/images/logos/pfizer.png",
   },
 ];
@@ -52,36 +47,29 @@ export const experience: Experience[] = [
 export type Organization = {
   name: string;
   role: string;
-  description: string;
+  // One short line about what the organization is.
+  about: string;
   logo: string;
-  // The logo's own background color, used to fill the large frame around it.
-  logoBg: string;
 };
 
 export const organizations: Organization[] = [
   {
     name: "Imagine Software",
     role: "Project Member",
-    description:
-      "Collaborate with a team of student developers on software projects, contributing to technical development, problem-solving, and turning project ideas into practical applications.",
+    about: "Student developers turning project ideas into practical applications",
     logo: "/images/logos/imagine-software.png",
-    logoBg: "#1f1f1d",
   },
   {
     name: "MSU AI Club",
     role: "Advanced Project Member",
-    description:
-      "Selected as one of the club's advanced project members, working on applied AI/ML initiatives. Currently contributing to a petrochemical tracking project, exploring how data and machine learning can help address industry-specific challenges.",
+    about: "Michigan State's student club for applied AI and machine learning projects",
     logo: "/images/logos/msu-ai-club.png",
-    logoBg: "#121212",
   },
   {
     name: "Spartan Virasat",
     role: "Team Member & Tech Chair",
-    description:
-      "Part of MSU's competitive South Asian dance team, contributing to choreography, technical coordination, and team performances while helping bring creative ideas to life on stage.",
+    about: "MSU's competitive South Asian dance team",
     logo: "/images/logos/spartan-virasat.png",
-    logoBg: "#000002",
   },
 ];
 

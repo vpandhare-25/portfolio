@@ -12,10 +12,9 @@ export default function Organizations() {
           <LogoEntry
             key={org.name}
             logo={org.logo}
-            logoBg={org.logoBg}
             name={org.name}
             role={org.role}
-            description={org.description}
+            about={org.about}
           />
         ))}
       </ul>

@@ -14,7 +14,7 @@ experience, organizations, and each project's description and stack.
 | What | File | Set in `site.ts` |
 |---|---|---|
 | Portrait | `public/images/portrait.jpg` | `profile.portrait` to `"/images/portrait.jpg"` |
-| Company and organization logos | `public/images/logos/<name>.png` | each entry's `logo` (organizations also take `logoBg`, the logo's background color) |
+| Company and organization logos | `public/images/logos/<name>.png` | each entry's `logo` |
 | Resume | `public/resume.pdf` | nothing, it's already linked |
 
 Until the portrait is added, its frame shows a labeled grid placeholder.
@@ -34,7 +34,7 @@ src/content/site.ts               all text and data
 src/app/page.tsx                  the page, in order: hero, experience, organizations, projects
 src/app/                          layout, fonts, metadata, share image, icon
 src/components/Hero.tsx           name, portrait, intro and contact links
-src/components/LogoEntry.tsx      one row: big logo left, name, role and description right
+src/components/LogoEntry.tsx      one row: big logo left, name and role right (organizations add one line)
 src/components/Experience.tsx     and Organizations.tsx: lists of LogoEntry rows
 src/components/Projects.tsx       project panels: description, stack and GitHub link
 ```
