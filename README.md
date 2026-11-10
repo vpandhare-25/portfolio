@@ -34,7 +34,7 @@ src/content/site.ts               all text and data
 src/app/page.tsx                  the page, in order: hero, experience, organizations, projects
 src/app/                          layout, fonts, metadata, share image, icon
 src/components/Hero.tsx           name, portrait, intro and contact links
-src/components/Experience.tsx     roles as a ruled ledger
-src/components/Organizations.tsx  index of teams with a photo frame that swaps on hover
+src/components/LogoEntry.tsx      one row: big logo left, name, role and description right
+src/components/Experience.tsx     and Organizations.tsx: lists of LogoEntry rows
 src/components/Projects.tsx       project panels: description, stack and GitHub link
 ```
