@@ -4,6 +4,7 @@ const sections = [
   { id: "experience", label: "Experience" },
   { id: "organizations", label: "Organizations" },
   { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
 ];
 
 // Thin dark bar pinned to the top: name on the left, section links and the theme switch on the right.

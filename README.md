@@ -31,10 +31,11 @@ npm run build   # production build, the same one Vercel runs
 
 ```
 src/content/site.ts               all text and data
-src/app/page.tsx                  the page, in order: hero, experience, organizations, projects
+src/app/page.tsx                  the page, in order: hero, experience, organizations, projects, skills
 src/app/                          layout, fonts, metadata, share image, icon
 src/components/Hero.tsx           name, portrait, intro and contact links
 src/components/LogoEntry.tsx      one row: big logo left, name and role right (organizations add one line)
 src/components/Experience.tsx     and Organizations.tsx: lists of LogoEntry rows
 src/components/Projects.tsx       project panels: description, stack and GitHub link
+src/components/Skills.tsx         three skill panels with logos
 ```

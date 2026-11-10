@@ -120,3 +120,34 @@ export const projects: Project[] = [
     demo: "https://kanban-task-board-mu-ten.vercel.app",
   },
 ];
+
+// Skills, grouped into three boxes. Taken from the Technical Skills section of the resume.
+// Each name needs a matching logo in src/components/Skills.tsx; names without one aren't shown.
+export const skills: { title: string; items: string[] }[] = [
+  {
+    title: "Languages",
+    items: ["C++", "Python", "Java", "C#", "JavaScript", "TypeScript", "SQL", "HTML", "CSS"],
+  },
+  {
+    title: "Technologies / Frameworks",
+    items: [
+      "React",
+      "Angular",
+      "Node.js",
+      "FastAPI",
+      "Streamlit",
+      "PyTorch",
+      "scikit-learn",
+      "Pandas",
+      "spaCy",
+      "OpenCV",
+      "PostgreSQL",
+      "Supabase",
+      "MongoDB",
+    ],
+  },
+  {
+    title: "Developer Tools",
+    items: ["Git", "Docker", "Linux", "AWS", "CMake", "OpenAI API"],
+  },
+];

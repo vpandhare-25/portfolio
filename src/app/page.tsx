@@ -3,10 +3,11 @@ import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Organizations from "@/components/Organizations";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 import { links, profile } from "@/content/site";
 
 // The whole portfolio is one page, in this order:
-// hero (name, links, photo, intro) → experience → organizations → projects.
+// hero (name, links, photo, intro) → experience → organizations → projects → skills.
 // All text comes from src/content/site.ts.
 export default function Home() {
   const newTab = { target: "_blank", rel: "noopener noreferrer" };
@@ -19,6 +20,7 @@ export default function Home() {
         <Experience />
         <Organizations />
         <Projects />
+        <Skills />
       </main>
 
       <footer className="mx-auto mt-28 max-w-[1360px] px-5 pb-10 md:mt-36 md:px-10">
