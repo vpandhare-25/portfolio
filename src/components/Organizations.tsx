@@ -74,7 +74,7 @@ export default function Organizations() {
                     >
                       {org.name}
                     </span>
-                    <span className="mt-4 block">
+                    <span className="mt-2 block">
                       <span className="role-tag">{org.role}</span>
                     </span>
                     <span className="mt-3 block max-w-md text-[15px] leading-relaxed text-ink-2">
