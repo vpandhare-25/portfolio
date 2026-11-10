@@ -18,12 +18,7 @@ export default function Organizations() {
 
   return (
     <section aria-labelledby="organizations" className="mx-auto max-w-[1360px] px-5 pt-24 md:px-10 md:pt-36">
-      <SectionHead
-        id="organizations"
-        index="03"
-        title="Organizations"
-        count={`${organizations.length} teams`}
-      />
+      <SectionHead id="organizations" title="Organizations" />
 
       <div className="mt-10 grid grid-cols-12 gap-x-6 gap-y-8 md:mt-14">
         {/* The photo frame: sticky on desktop so it stays in view beside the list. */}
@@ -46,11 +41,8 @@ export default function Organizations() {
               </div>
             ))}
           </div>
-          <figcaption className="mt-3 flex justify-between font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
-            <span>{organizations[active].name}</span>
-            <span>
-              {String(active + 1).padStart(2, "0")} / {String(organizations.length).padStart(2, "0")}
-            </span>
+          <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+            {organizations[active].name}
           </figcaption>
         </figure>
 
@@ -65,15 +57,19 @@ export default function Organizations() {
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}
                   aria-pressed={on}
-                  className="grid w-full grid-cols-[2.5rem_1fr] gap-x-2 py-7 text-left md:py-9"
+                  className="relative block w-full py-7 pl-5 text-left md:py-9"
                 >
-                  <span className={`pt-2 font-mono text-xs transition-colors ${on ? "text-signal" : "text-muted"}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>
+                  {/* Green bar marks the organization whose photo is showing. */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-y-7 left-0 w-[2px] origin-top bg-signal transition-transform duration-300 md:inset-y-9 ${
+                      on ? "scale-y-100" : "scale-y-0"
+                    }`}
+                  />
+                  <span className="block">
                     <span
                       className={`block text-[clamp(1.6rem,3vw,2.5rem)] font-semibold leading-[1.05] tracking-[-0.02em] transition-[color,transform] duration-300 ${
-                        on ? "translate-x-2 text-ink" : "text-ink/45"
+                        on ? "text-ink" : "text-ink/45"
                       }`}
                     >
                       {org.name}

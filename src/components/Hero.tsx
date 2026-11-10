@@ -1,17 +1,18 @@
-import { ArrowUpRight } from "lucide-react";
+import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import { links, profile } from "@/content/site";
 import Photo from "./Photo";
 
-// The contact links, shown as a small table: what it is on the left, where it goes on the right.
-const contactRows = [
-  { label: "GitHub", value: "vpandhare-25", href: links.github, newTab: true },
-  { label: "LinkedIn", value: "vivek-pandhare", href: links.linkedin, newTab: true },
-  { label: "Email", value: links.email, href: `mailto:${links.email}`, newTab: false },
-  { label: "Resume", value: "PDF", href: links.resume, newTab: true },
+// The contact links as a row of square icon buttons. GitHub, LinkedIn and the resume
+// open in a new tab; Email opens the visitor's own mail app with the address filled in.
+const contactLinks = [
+  { label: "GitHub", href: links.github, Icon: FaGithub, newTab: true },
+  { label: "LinkedIn", href: links.linkedin, Icon: FaLinkedin, newTab: true },
+  { label: "Email", href: `mailto:${links.email}`, Icon: FaEnvelope, newTab: false },
+  { label: "Resume", href: links.resume, Icon: FaFileAlt, newTab: true },
 ];
 
 // Dark opening band. The name is set huge and wide on the left, the portrait sits
-// beside it on the right, and the intro and contact table sit underneath.
+// beside it on the right, and the intro and contact buttons sit underneath.
 export default function Hero() {
   return (
     <section id="top" aria-label="Introduction" className="bg-band text-band-ink">
@@ -42,27 +43,20 @@ export default function Hero() {
           {profile.intro}
         </p>
 
-        <ul className="col-span-12 mt-10 self-end border-t border-band-rule font-mono text-[13px] md:col-span-4 md:col-start-9 md:mt-20">
-          {contactRows.map((row) => (
-            <li key={row.label} className="border-b border-band-rule">
+        <ul className="col-span-12 mt-10 grid grid-cols-4 self-end border-l border-t border-band-rule md:col-span-4 md:col-start-9 md:mt-20">
+          {contactLinks.map(({ label, href, Icon, newTab }) => (
+            <li key={label} className="border-b border-r border-band-rule">
               <a
-                href={row.href}
-                {...(row.newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group flex items-center justify-between gap-4 py-3 transition-colors"
+                href={href}
+                {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                aria-label={newTab ? `${label} (opens in a new tab)` : label}
+                title={label}
+                className="group flex aspect-square flex-col items-center justify-center gap-2.5 transition-colors duration-300 hover:bg-band-ink hover:text-band"
               >
-                <span className="flex items-center gap-3 uppercase tracking-[0.1em] text-band-muted transition-colors group-hover:text-band-ink">
-                  <span aria-hidden className="h-px w-3 bg-current transition-all duration-300 group-hover:w-6 group-hover:bg-signal" />
-                  {row.label}
+                <Icon aria-hidden className="size-6 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-band-muted transition-colors group-hover:text-band">
+                  {label}
                 </span>
-                <span className="flex items-center gap-1.5 truncate">
-                  {row.value}
-                  <ArrowUpRight
-                    aria-hidden
-                    strokeWidth={1.5}
-                    className="size-3.5 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />
-                </span>
-                {row.newTab && <span className="sr-only">(opens in a new tab)</span>}
               </a>
             </li>
           ))}

@@ -7,7 +7,7 @@ Built with Next.js, TypeScript and Tailwind CSS. Deployed on Vercel.
 ## Editing the content
 
 All of the text lives in [`src/content/site.ts`](src/content/site.ts): the intro, links,
-experience, organizations, and each project's description, headline numbers and stack.
+experience, organizations, and each project's description and stack.
 
 ### Photos and resume
 
@@ -38,5 +38,5 @@ src/app/                          layout, fonts, metadata, share image, icon
 src/components/Hero.tsx           name, portrait, intro and contact links
 src/components/Experience.tsx     roles as a ruled ledger
 src/components/Organizations.tsx  index of teams with a photo frame that swaps on hover
-src/components/Projects.tsx       spec sheets with headline numbers
+src/components/Projects.tsx       project panels: description, stack and GitHub link
 ```
