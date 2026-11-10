@@ -13,7 +13,7 @@ export default function Projects() {
         {projects.map((p) => (
           <article
             key={p.name}
-            className="border-2 border-transparent bg-paper-2 p-5 transition-colors duration-300 hover:border-ink md:p-10"
+            className="border-2 border-transparent bg-paper-2 p-5 transition-colors duration-300 hover:border-ink dark:hover:border-signal md:p-10"
           >
             {/* Title row */}
             <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-4">

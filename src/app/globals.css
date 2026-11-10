@@ -4,39 +4,39 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  Color tokens. Paper and ink, a dark band for the hero, and one signal color
-  (a deep Spartan green) used only for small markers and active states.
+  Color tokens: black and gold. Warm ivory paper and true black ink, a black band
+  for the hero, and gold for accents, active states and role tags.
 */
 :root {
-  --paper: #f4f3ef;
-  --paper-2: #eae8e2;
-  --ink: #111312;
-  --ink-2: #3b3f3c;
-  --muted: #6c706c;
-  --rule: #d5d3cc;
-  --signal: #1d6b48;
-  --band: #111312;
-  --band-ink: #f4f3ef;
-  --band-muted: #9a9f9b;
-  --band-rule: #2c302d;
-  --chip-bg: #111312;
-  --chip-fg: #f4f3ef;
+  --paper: #f7f4ec;
+  --paper-2: #eee8d9;
+  --ink: #0b0b0b;
+  --ink-2: #2f2b23;
+  --muted: #6b6456;
+  --rule: #ddd4bf;
+  --signal: #b08a1e; /* deeper gold, so it stays readable on ivory */
+  --band: #0b0b0b;
+  --band-ink: #f5efe0;
+  --band-muted: #a39a84;
+  --band-rule: #2a261d;
+  --chip-bg: #0b0b0b;
+  --chip-fg: #d4af37; /* gold text on black tags */
 }
 
 .dark {
-  --paper: #121413;
-  --paper-2: #1a1d1b;
-  --ink: #ecebe6;
-  --ink-2: #c6c7c1;
-  --muted: #8e938e;
-  --rule: #2b2f2c;
-  --signal: #5fbf8f;
-  --band: #0a0b0a;
-  --band-ink: #ecebe6;
-  --band-muted: #8e938e;
-  --band-rule: #262a27;
-  --chip-bg: #ecebe6;
-  --chip-fg: #121413;
+  --paper: #0b0b0b;
+  --paper-2: #16140f;
+  --ink: #f2ead6;
+  --ink-2: #cfc6b0;
+  --muted: #8f8670;
+  --rule: #2a261d;
+  --signal: #d4af37;
+  --band: #050505;
+  --band-ink: #f2ead6;
+  --band-muted: #8f8670;
+  --band-rule: #221f18;
+  --chip-bg: #d4af37; /* black text on gold tags */
+  --chip-fg: #0b0b0b;
 }
 
 @theme inline {

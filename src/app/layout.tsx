@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111312",
+  themeColor: "#0b0b0b",
 };
 
 // Runs before the page paints, so a visitor who chose dark mode never sees a light flash.
