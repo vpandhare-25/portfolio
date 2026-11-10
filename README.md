@@ -9,17 +9,15 @@ Built with Next.js, TypeScript and Tailwind CSS. Deployed on Vercel.
 All of the text lives in [`src/content/site.ts`](src/content/site.ts): the intro, links,
 experience, organizations, and each project's description and stack.
 
-### Photos and resume
+### Images and resume
 
-| What | Put the file at | Then in `site.ts` |
+| What | File | Set in `site.ts` |
 |---|---|---|
-| Portrait | `public/images/portrait.jpg` | set `profile.portrait` to `"/images/portrait.jpg"` |
-| Imagine Software | `public/images/orgs/imagine-software.jpg` | set that organization's `image` |
-| MSU AI Club | `public/images/orgs/msu-ai-club.jpg` | set that organization's `image` |
-| Spartan Virasat | `public/images/orgs/spartan-virasat.jpg` | set that organization's `image` |
+| Portrait | `public/images/portrait.jpg` | `profile.portrait` to `"/images/portrait.jpg"` |
+| Company and organization logos | `public/images/logos/<name>.png` | each entry's `logo` (organizations also take `logoBg`, the logo's background color) |
 | Resume | `public/resume.pdf` | nothing, it's already linked |
 
-Until a photo is added, its frame shows a labeled grid placeholder.
+Until the portrait is added, its frame shows a labeled grid placeholder.
 
 ## Run it locally
 
