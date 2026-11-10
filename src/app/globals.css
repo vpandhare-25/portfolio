@@ -19,6 +19,8 @@
   --band-ink: #f4f3ef;
   --band-muted: #9a9f9b;
   --band-rule: #2c302d;
+  --chip-bg: #111312;
+  --chip-fg: #f4f3ef;
 }
 
 .dark {
@@ -33,6 +35,8 @@
   --band-ink: #ecebe6;
   --band-muted: #8e938e;
   --band-rule: #262a27;
+  --chip-bg: #ecebe6;
+  --chip-fg: #121413;
 }
 
 @theme inline {
@@ -90,4 +94,25 @@ body {
     linear-gradient(var(--rule) 1px, transparent 1px),
     linear-gradient(90deg, var(--rule) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+/* Role label (e.g. "Software Engineering Intern"): a solid tag so it stands out. */
+.role-tag {
+  display: inline-block;
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+  padding: 0.3rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Blinking cursor for the typing animation under the name. */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

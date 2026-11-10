@@ -1,6 +1,7 @@
 import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import { links, profile } from "@/content/site";
 import Photo from "./Photo";
+import Typewriter from "./Typewriter";
 
 // The contact links as a row of square icon buttons. GitHub, LinkedIn and the resume
 // open in a new tab; Email opens the visitor's own mail app with the address filled in.
@@ -27,7 +28,13 @@ export default function Hero() {
           <span className="block">{profile.lastName}</span>
         </h1>
 
-        <figure className="col-span-8 col-start-1 mt-10 sm:col-span-5 md:col-span-3 md:col-start-10 md:row-span-2 md:row-start-1 md:mt-0">
+        {/* Typing line under the name: types each role, deletes it, then types the next. */}
+        <Typewriter
+          phrases={profile.roles}
+          className="col-span-12 mt-6 h-[1.3em] whitespace-nowrap text-[clamp(1.35rem,2.6vw,2.25rem)] font-medium leading-[1.3] tracking-[-0.01em] text-band-ink md:col-span-9 md:row-start-3 md:mt-8"
+        />
+
+        <figure className="col-span-8 col-start-1 mt-10 sm:col-span-5 md:col-span-3 md:col-start-10 md:row-span-3 md:row-start-1 md:mt-0">
           <Photo
             src={profile.portrait}
             alt="Portrait of Vivek Pandhare"

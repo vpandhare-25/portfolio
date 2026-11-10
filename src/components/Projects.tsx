@@ -11,11 +11,14 @@ export default function Projects() {
 
       <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
         {projects.map((p) => (
-          <article key={p.name} className="bg-paper-2 p-5 md:p-10">
+          <article
+            key={p.name}
+            className="border-2 border-transparent bg-paper-2 p-5 transition-colors duration-300 hover:border-ink md:p-10"
+          >
             {/* Title row */}
             <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-4">
               <div>
-                <h3 className="wide text-[clamp(1.9rem,4vw,3.25rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.02em]">
+                <h3 className="wide text-[clamp(1.4rem,2.4vw,2rem)] font-extrabold uppercase leading-[1] tracking-[-0.02em]">
                   {p.name}
                 </h3>
                 <p className="mt-2 text-ink-2">{p.subtitle}</p>

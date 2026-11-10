@@ -8,6 +8,8 @@ export const profile = {
   firstName: "Vivek",
   lastName: "Pandhare",
   kicker: "Computer Science · Michigan State University",
+  // These type out one at a time under the name.
+  roles: ["Software Engineer", "MSU Spartan", "Dancer", "Tech Enthusiast"],
   intro:
     "I'm a Computer Science student at Michigan State University interested in building reliable software, solving complex engineering problems, and understanding how systems work under the hood. I enjoy working across backend development, systems programming, and applied AI, and I'm always looking for opportunities to learn and build things that have a real impact.",
   // Your photo: public/images/portrait.jpg -> "/images/portrait.jpg"

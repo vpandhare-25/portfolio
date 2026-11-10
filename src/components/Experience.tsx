@@ -18,7 +18,9 @@ export default function Experience() {
               <h3 className="text-[clamp(1.6rem,2.8vw,2.4rem)] font-semibold leading-[1.05] tracking-[-0.02em] transition-transform duration-300 group-hover:translate-x-1">
                 {job.company}
               </h3>
-              <p className="mt-3 font-mono text-xs uppercase tracking-[0.1em] text-signal">{job.role}</p>
+              <p className="mt-4">
+                <span className="role-tag">{job.role}</span>
+              </p>
             </div>
             <p className="col-span-12 max-w-xl text-[15px] leading-relaxed text-ink-2 md:col-span-6 md:pt-1.5">
               {job.description}
